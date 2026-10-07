@@ -123,7 +123,7 @@ def resolve_url(url, doc_title):
     for pat, rep in LANDING: url = re.sub(r'^https?://' + pat, rep, url)
     kind, ident = identify(url)
     if kind == 'pmcid' or kind == 'pmid':
-        r = net.cached('ncbi', ident, lambda: net.http(f'https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids={ident}&format=json&tool=zotero-maintenance'))
+        r = net.cached('ncbi', ident, lambda: net.http(f'https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids={ident}&format=json&tool=zot_fixer'))
         doi = ((r or {}).get('records') or [{}])[0].get('doi') if isinstance(r, dict) else None
         kind, ident = ('doi', doi) if doi else (kind, ident)
     if kind == 'pii':

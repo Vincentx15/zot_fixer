@@ -1,7 +1,7 @@
 // Undo apply_fixes.js: restores every item listed in an undo_*.json file to its previous state.
 // Zotero → Tools → Developer → Run JavaScript, tick "Run as async function", set UNDO_FILE, Run.
 
-const UNDO_FILE = '/home/vincent/Documents/demande_financements/2026 - JCJC/zotero_audit/apply/undo_REPLACE_ME.json';
+const UNDO_FILE = '/home/vincent/projects/non_research/zot_fixer/history/2026-10-07/REPLACE_ME.json';
 
 const undo = await IOUtils.readJSON(UNDO_FILE);
 const libraryID = Zotero.Libraries.userLibraryID;

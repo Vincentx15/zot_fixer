@@ -10,7 +10,7 @@ from difflib import SequenceMatcher
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE_PATH = os.path.join(ROOT, 'state', 'cache.json')
-UA = 'zotero-maintenance/1.0' + (f" (mailto:{os.environ['CROSSREF_MAILTO']})" if os.environ.get('CROSSREF_MAILTO') else '')
+UA = 'zot_fixer/1.0' + (f" (mailto:{os.environ['CROSSREF_MAILTO']})" if os.environ.get('CROSSREF_MAILTO') else '')
 TRANSLATION_SERVER = os.environ.get('TRANSLATION_SERVER', 'http://127.0.0.1:1969')
 
 # ----------------------------------------------------------------------------- text
@@ -113,7 +113,7 @@ def datacite_arxiv(arxiv_id=None, title=None):
 def arxiv_page(aid):
     """Journal ref, Comments and Related DOI from the arXiv abstract page."""
     def go():
-        page = http(f'https://arxiv.org/abs/{aid}', headers={'User-Agent': 'Mozilla/5.0 (zotero-maintenance)'}, raw=True)
+        page = http(f'https://arxiv.org/abs/{aid}', headers={'User-Agent': 'Mozilla/5.0 (zot_fixer)'}, raw=True)
         if not isinstance(page, str): return page
         def cell(cls):
             m = re.search(rf'class="tablecell {cls}[^"]*">(.*?)</td>', page, re.S)

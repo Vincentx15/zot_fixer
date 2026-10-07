@@ -1,6 +1,6 @@
 // Undo organize.js: set UNDO_FILE to the undo_organize_*.json written by the real run.
 // Zotero → Tools → Developer → Run JavaScript, tick "Run as async function", paste, Run.
-const UNDO_FILE = '/home/vincent/Documents/demande_financements/2026 - JCJC/zotero_audit/apply/undo_organize_REPLACE_ME.json';
+const UNDO_FILE = '/home/vincent/projects/non_research/zot_fixer/history/2026-10-07/REPLACE_ME.json';
 
 const undo = await IOUtils.readJSON(UNDO_FILE);
 const libraryID = Zotero.Libraries.userLibraryID;

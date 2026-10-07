@@ -1,4 +1,4 @@
-# zotero-maintenance
+# zot_fixer
 
 Keeps my Zotero library clean and in sync with my reading-list Google Doc.
 Python scripts compute the changes; one Zotero script applies them (with dry run and undo).

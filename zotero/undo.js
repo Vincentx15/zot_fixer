@@ -1,5 +1,5 @@
 // Revert a run of apply.js. Zotero → Tools → Developer → Run JavaScript, "Run as async function", set UNDO, Run.
-const UNDO = '/home/vincent/Documents/zotero-maintenance/out/REPLACE_ME.undo.json';
+const UNDO = '/home/vincent/projects/non_research/zot_fixer/out/REPLACE_ME.undo.json';
 
 const undo = (await IOUtils.readJSON(UNDO)).reverse();
 const libraryID = Zotero.Libraries.userLibraryID;

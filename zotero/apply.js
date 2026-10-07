@@ -12,7 +12,7 @@
 //   {op: 'trash',     key}
 
 const DRY_RUN = true;
-const CHANGES = '/home/vincent/Documents/zotero-maintenance/out/check_2026-10-07_1620.json';
+const CHANGES = '/home/vincent/projects/non_research/zot_fixer/out/REPLACE_ME.json';
 
 const ops = await IOUtils.readJSON(CHANGES);
 const libraryID = Zotero.Libraries.userLibraryID;
