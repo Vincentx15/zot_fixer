@@ -100,7 +100,8 @@ def main(docx):
     path = write_changes('readinglist', ops, L)
     os.makedirs(STATE, exist_ok=True)
     json.dump(mapping, open(MAPPING, 'w'), indent=1)
-    shutil.copy(docx, os.path.join(STATE, time.strftime('%Y-%m-%d_') + os.path.basename(docx)))
+    if os.path.dirname(os.path.abspath(docx)) != STATE:  # keep this export as the baseline for the next comparison
+        shutil.copy(docx, os.path.join(STATE, time.strftime('%Y-%m-%d_') + os.path.basename(docx)))
     print(f'wrote {path} (+ .md report). Apply it with zotero/apply.js.')
 
 if __name__ == '__main__':
